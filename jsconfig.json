@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/graphql/*": ["./graphql/*"],
+      "@/middlewares/*": ["./middlewares/*"]
+    }
+  },
+  "include": [".", "../models"]
+}
