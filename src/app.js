@@ -33,8 +33,10 @@ mongoose
 //  1. creates an Express app
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
+const port = Number.parseInt(process.env.PORT, 10) || 8000;
+
 startStandaloneServer(server, {
-  listen: { port: process.env.PORT || 8000 },
+  listen: { port },
   context: async ({ req, res }) => ({ req, res, authUser }),
 })
   .then(({ url }) => console.log(`🚀  Server ready at: ${url}`))
