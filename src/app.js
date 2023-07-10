@@ -34,7 +34,7 @@ mongoose
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
 startStandaloneServer(server, {
-  listen: { port: 8000 },
+  listen: { port: process.env.PORT || 8000 },
   context: async ({ req, res }) => ({ req, res, authUser }),
 })
   .then(({ url }) => console.log(`🚀  Server ready at: ${url}`))

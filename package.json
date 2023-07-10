@@ -50,7 +50,7 @@
     "supertest": "^6.3.3"
   },
   "lint-staged": {
-    "**/*.{js}": [
+    "**/*.js": [
       "npm run lint",
       "prettier --write"
     ]
