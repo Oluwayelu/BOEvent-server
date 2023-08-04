@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-import { authUser } from '../middlewares/auth.js';
+import authUser from '../middlewares/auth.js';
 import { resolvers, typeDefs } from '../graphql/index.js';
 
 dotenv.config();
