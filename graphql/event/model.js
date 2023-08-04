@@ -30,8 +30,8 @@ const eventSchema = new Schema(
     },
     time: {
       endDate: { type: Date },
-      endTime: { type: Date, required: true },
-      startTime: { type: Date, required: true },
+      endTime: { type: String, required: true },
+      startTime: { type: String, required: true },
       startDate: { type: Date, required: true },
     },
     organizer: {
