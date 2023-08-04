@@ -33,7 +33,7 @@ mongoose
 //  1. creates an Express app
 //  2. installs your ApolloServer instance as middleware
 //  3. prepares your app to handle incoming requests
-const port = Number.parseInt(process.env.PORT, 10) || 8000;
+const port = process.env.PORT;
 
 startStandaloneServer(server, {
   listen: { port },
