@@ -1,11 +1,14 @@
-import { mutationsResolver, queriesResolver } from './user/index.js';
+import { userMutationsResolver, userQueriesResolver } from './user/index.js';
+import { eventMutationsResolver, eventQueriesResolver } from './event/index.js';
 
 const resolvers = {
   Query: {
-    ...queriesResolver,
+    ...userQueriesResolver,
+    ...eventQueriesResolver,
   },
   Mutation: {
-    ...mutationsResolver,
+    ...userMutationsResolver,
+    ...eventMutationsResolver,
   },
 };
 

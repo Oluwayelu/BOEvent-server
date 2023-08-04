@@ -1,14 +1,18 @@
-import { types, mutationsType, queriesType } from './user/index.js';
+import { userTypes, userMutationsType, userQueriesType } from './user/index.js';
+import { eventTypes, eventMutationsType, eventQueriesType } from './event/index.js';
 
 const typeDefs = `
-  ${types}
+  ${userTypes}
+  ${eventTypes}
 
   type Query {
-    ${queriesType}
+    ${userQueriesType}
+    ${eventQueriesType}
   }
 
   type Mutation {
-    ${mutationsType}
+    ${userMutationsType}
+    ${eventMutationsType}
   }
 `;
 
