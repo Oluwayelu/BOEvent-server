@@ -73,11 +73,11 @@ const mutations = {
         throw new GraphQLError('User does not exist');
       }
 
-      await User.findByIdAndUpdate(user.id, { $addToSet: { following: followingUser } });
+      await User.findByIdAndUpdate(user.id, { $addToSet: { following: followingUser.id } });
       followingUser = await User.findByIdAndUpdate(followingUser.id, { $addToSet: { followers: user.id } });
 
       return {
-        message: 'User followed successfully',
+        message: `${followingUser.name.firstname} followed successfully`,
         user: followingUser,
       };
     } catch (err) {
@@ -94,14 +94,15 @@ const mutations = {
         throw new GraphQLError('User does not exist');
       }
 
-      await User.findByIdAndUpdate(user.id, { $pull: { following: followingUser } });
+      await User.findByIdAndUpdate(user.id, { $pull: { following: followingUser.id } });
       followingUser = await User.findByIdAndUpdate(followingUser.id, { $pull: { followers: user.id } });
 
       return {
-        message: 'User unfollowed successfully',
+        message: `${followingUser.name.firstname} unfollowed successfully`,
         user: followingUser,
       };
     } catch (err) {
+      console.log(err);
       throw new GraphQLError('Error unfollowing user', err);
     }
   },
