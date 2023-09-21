@@ -8,8 +8,20 @@ const types = `
     venue: EventVenue!
     price: Float!
     time: EventTime!
-    organizer: String!
   }
+
+  type EventOrganizer {
+    id: ID!
+    title: String!
+    banner: [String!]
+    summary: String!
+    description: String!
+    venue: EventVenue!
+    price: Float!
+    time: EventTime!
+    organizer: User
+  }
+
 
   type EventVenue {
     type: String!

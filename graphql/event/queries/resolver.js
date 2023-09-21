@@ -7,7 +7,7 @@ const queries = {
   },
 
   event: async (_, { id }) => {
-    const event = await Event.findById(id);
+    const event = await Event.findById(id).populate('organizer');
 
     if (!event) {
       throw new Error('Invalid event id');
