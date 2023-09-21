@@ -1,6 +1,6 @@
 const queries = `
   events: [Event]
-  event(id: String!): Event!
+  event(id: String!): EventOrganizer!
 `;
 
 export default queries;
