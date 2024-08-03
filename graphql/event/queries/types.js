@@ -1,6 +1,7 @@
 const queries = `
   events: [Event]
-  event(id: String!): EventOrganizer!
+  event(url: String!): EventOrganizer!
+  myEvents: [Event]
 `;
 
 export default queries;

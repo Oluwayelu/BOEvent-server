@@ -6,6 +6,11 @@ const eventSchema = new Schema(
       type: String,
       required: true,
     },
+    url: {
+      type: String,
+      unique: true,
+      required: true,
+    },
     banner: [
       {
         type: String,
@@ -24,15 +29,35 @@ const eventSchema = new Schema(
       type: { type: String, required: true },
       location: { type: String, required: true },
     },
-    price: {
-      type: Number,
+    category: {
+      type: String,
       required: true,
+    },
+    ticket: {
+      type: {
+        type: String,
+        required: true,
+      },
+      stock: {
+        type: Number,
+        default: null,
+      },
+      stockType: {
+        type: String,
+        required: true,
+      },
+      price: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
     },
     time: {
       endDate: { type: Date },
       endTime: { type: String, required: true },
       startTime: { type: String, required: true },
       startDate: { type: Date, required: true },
+      type: { type: String, required: true },
     },
     organizer: {
       type: Schema.Types.ObjectId,
